@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import BranxhesImg from '../assets/Logo.svg';
 import Button from "../components/Button";
+import OnboardingPage from "./OnboardingPage";
 
 function LanguageSelect(){
+    const [isComponentVisible, setIsComponentVisible] = useState(false);
+
+    function handelComponent(){
+        setIsComponentVisible(true);
+    }
+
     return (
         <div className="flex justify-center">
-            <div className="flex flex-col">
+            {!isComponentVisible && (
+                <div className="flex flex-col">
                 <div className="flex justify-center">
                     <img src={BranxhesImg} alt="Branshex Logo Image" className="size-50 p-10"/>
                 </div>
@@ -32,11 +40,19 @@ function LanguageSelect(){
                         <option value="zh">Mandarin Chinese</option> {/* Fixed: Separated Mandarin Chinese */}
                         
                     </select>
-                     <div className="mt-40">
+                     <div className="mt-40" onClick={handelComponent}>
                         <Button title={"Next"} className={"px-35 py-3 rounded-full bg-green-900 cursor-pointer opacity-70"}/>
                      </div>
+                     
                 </div>
             </div>
+            )}
+            {isComponentVisible && (
+                <div>
+                    <OnboardingPage />
+                </div>
+            )}
+            
         </div>
     )
 }
