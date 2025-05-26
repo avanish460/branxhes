@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import LegacyImage from '../assets/OnboardingImg1.png'
 import RootImgage from '../assets/OnboardingImg2.png'
 import FamilyImgae from '../assets/OnboardingImg3.png'
@@ -12,6 +12,7 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Autoplay, Pagination } from 'swiper/modules';
+import WelcomePage from './WelcomePage';
 
 const DETAILS = [
     {
@@ -36,41 +37,57 @@ const DETAILS = [
 
 function OnboardingPage(){
     
+    const [isComponentVisible, setIsComponentVisible] = useState(false);
+
+    function handelComponent(){
+        setIsComponentVisible(true);
+    }
+
     return (
         <div>
-            <Swiper
-                spaceBetween={30}
-                centeredSlides={true}
-                autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-                }}
-                pagination={{
-                clickable: true,
-                }}
-                modules={[Autoplay, Pagination]}
-                className="mySwiper w-80 h-115 rounded-lg"
-            >
-            {
-                DETAILS.map(detail => <SwiperSlide><div key={detail.id} className="flex justify-center p-1">
-                <div className="w-80 h-115 bg-white rounded-lg">
-                    <div>
-                        <img src={detail.photo} alt={detail.title} />
-                    </div>
-                    <div>
-                        <h1 className="font-sans font-bold text-xl tracking-wide text-black">{detail.title}</h1>
-                        <p className="text-black text-sm p-5">{detail.content}</p>
+            {!isComponentVisible ? (
+                <div>
+                    <Swiper
+                        spaceBetween={30}
+                        centeredSlides={true}
+                        autoplay={{
+                        delay: 2500,
+                        disableOnInteraction: false,
+                        }}
+                        pagination={{
+                        clickable: true,
+                        }}
+                        modules={[Autoplay, Pagination]}
+                        className="mySwiper w-80 h-115 rounded-lg"
+                    >
+                    {
+                        DETAILS.map(detail => <SwiperSlide><div key={detail.id} className="flex justify-center p-1">
+                        <div className="w-80 h-115 bg-white rounded-lg">
+                            <div>
+                                <img src={detail.photo} alt={detail.title} />
+                            </div>
+                            <div>
+                                <h1 className="font-sans font-bold text-xl tracking-wide text-black">{detail.title}</h1>
+                                <p className="text-black text-sm p-5">{detail.content}</p>
+                            </div>
+                        </div>
+                        </div></SwiperSlide>)
+                    
+                    }
+            
+                    </Swiper>
+                    <div className="flex justify-center pt-10" onClick={handelComponent}>
+                        <Button title={"Skip"} className={"px-13 py-2 mr-5 rounded-full bg-emerald-100 text-black cursor-pointer opacity-40"}/>
+                        <Button title={"Next"} className={"px-13 py-2 ml-5 rounded-full bg-green-900 cursor-pointer opacity-70"}/>
                     </div>
                 </div>
-            </div></SwiperSlide>)
+                
+            ):(
+                <div>
+                    <WelcomePage />
+                </div>
+            )}
             
-            }
-            
-            </Swiper>
-            <div className="flex justify-center pt-10">
-                <Button title={"Skip"} className={"px-13 py-2 mr-5 rounded-full bg-emerald-100 text-black cursor-pointer opacity-40"}/>
-                <Button title={"Next"} className={"px-13 py-2 ml-5 rounded-full bg-green-900 cursor-pointer opacity-70"}/>
-            </div>
         </div>
     )
 }
