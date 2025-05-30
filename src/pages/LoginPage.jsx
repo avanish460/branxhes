@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from '../assets/Logo.svg'
+import Logo from '../assets/Logo.svg';
 import { FcGoogle } from 'react-icons/fc';
 import { FaApple } from 'react-icons/fa';
 import Button from "../components/Button";
@@ -15,7 +15,7 @@ function LoginPage(){
                 </div>
                         
                 <div className="flex justify-center p-2">
-                    <div className="flex flex-col">
+                    <div className="flex flex-col -ml-7">
                         <h1 className="flex justify-start font-sans font-bold tracking-wide text-black">Let’s Get Started!</h1>
                         <p className="text-black text-sm">
                             Please enter the email address & password
