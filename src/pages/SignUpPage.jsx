@@ -31,7 +31,7 @@ function SignUpPage(){
                             </p>
                         </div>                
                     </div>
-                    <div className="flex flex-col">
+                    <div className="flex flex-col cursor-pointer">
                         <div className="flex justify-center p-2">
                             <div className="w-15 h-15 border-2 border-dashed border-[#5F8B7A] rounded-lg flex justify-center">
                                 <FaUpload className="text-[#5F8B7A] size-5 mt-4"/>
@@ -44,17 +44,17 @@ function SignUpPage(){
                     <div className="flex justify-center">
                         <div className="flex flex-col">
                             <label htmlFor="Name" className="flex justify-start text-black text-sm font-bold tracking-wide p-1">Name</label>
-                            <input type="text" className="bg-white rounded-lg shadow-xl text-black flex justify-start w-75 py-1"/>
+                            <input type="text" className="bg-white rounded-lg shadow-xl text-black flex justify-start w-75 px-2 py-1"/>
                             <label htmlFor="Username" className="flex justify-start text-black text-sm font-bold tracking-wide p-1">Username</label>
-                            <input type="text" className="bg-white rounded-lg shadow-xl text-black flex justify-start w-75 py-1"/>
+                            <input type="text" className="bg-white rounded-lg shadow-xl text-black flex justify-start w-75 px-2 py-1"/>
                             <label htmlFor="Email" className="flex justify-start text-black text-sm font-bold tracking-wide p-1">Email</label>
-                            <input type="text" className="bg-white rounded-lg shadow-xl text-black flex justify-start w-75 py-1"/>
+                            <input type="text" className="bg-white rounded-lg shadow-xl text-black flex justify-start w-75 px-2 py-1"/>
                             <label htmlFor="Phonenumber" className="flex justify-start text-black text-sm font-bold tracking-wide p-1">Phone number</label>
-                            <input type="text" className="bg-white rounded-lg shadow-xl text-black flex justify-start w-75 py-1"/>
+                            <input type="text" className="bg-white rounded-lg shadow-xl text-black flex justify-start w-75 px-2 py-1"/>
                             <label htmlFor="Password" className="flex justify-start text-black text-sm font-bold tracking-wide p-1">Password</label>
-                            <input type="text" className="bg-white rounded-lg shadow-xl text-black flex justify-start w-75 py-1"/>
+                            <input type="text" className="bg-white rounded-lg shadow-xl text-black flex justify-start w-75 px-2 py-1"/>
                             <label htmlFor="Confirm Password" className="flex justify-start text-black text-sm font-bold tracking-wide p-1">Confirm Password</label>
-                            <input type="text" className="bg-white rounded-lg shadow-xl text-black flex justify-start w-75 py-1"/>
+                            <input type="text" className="bg-white rounded-lg shadow-xl text-black flex justify-start w-75 px-2 py-1"/>
                         </div>
                     </div>
 
