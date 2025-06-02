@@ -50,9 +50,9 @@ function LoginPage(){
                         <div className="flex justify-center">
                             <div className="flex flex-col">
                                 <label htmlFor="Email" className="flex justify-start text-black text-sm font-bold tracking-wide p-1">Email</label>
-                                <input type="text" className="bg-white rounded-lg shadow-xl text-black flex justify-start w-75 py-1"/>
+                                <input type="text" className="bg-white rounded-lg shadow-xl text-black flex justify-start w-75 px-2 py-1"/>
                                 <label htmlFor="Password" className="flex justify-start text-black text-sm font-bold tracking-wide p-1">Password</label>
-                                <input type="text" className="bg-white rounded-lg shadow-xl text-black flex justify-start w-75 py-1"/>
+                                <input type="text" className="bg-white rounded-lg shadow-xl text-black flex justify-start w-75 px-2 py-1"/>
                             </div>
                         </div>
                         <div className="flex justify-end mr-5">
