@@ -4,23 +4,34 @@ import Button from "../components/Button";
 import Back from "../assets/backButton.svg";
 import VerificationPage from "./VerificationPage";
 import { useState } from 'react';
+import LoginPage from "./LoginPage";
 
 function ForgotPasswordPage(){
     const [isComponentVisible, setIsComponentVisible] = useState(false);
+    const [back, setBack] = useState(false);
     
     function handleComponent(){
         setIsComponentVisible(true);
     }
+
+    function handleBack(){
+        setBack(true);
+    }
+
     return (
         <div>
             {isComponentVisible ? (
                 <div>
                     <VerificationPage />
                 </div>
+            ):back ? (
+                <div>
+                    <LoginPage />
+                </div>
             ):(    
                 <div>
                     <div>
-                        <div className="absolute p-4 ml-2 cursor-pointer">
+                        <div className="absolute p-4 ml-2 cursor-pointer" onClick={handleBack}>
                             <img src={Back} alt="Back Button" className="size-5"/>
                         </div>
                         <div className="flex justify-center p-2">

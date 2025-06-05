@@ -3,10 +3,12 @@ import Logo from '../assets/Logo.svg';
 import Button from "../components/Button";
 import Back from "../assets/backButton.svg";
 import ConfirmPasswordPopUp from "../components/confirmPasswordPopUP";
+import VerificationPage from "./VerificationPage";
 
 function NewPasswordPage(){
     const [isPopUpVisible, setIsPopUpVisible] = useState(false);
     const [isLoginPageVisible, setIsLoginPageVisible] = useState(false);
+    const [back, setBack] = useState(false);
     
     function handleLoginPage(){
         setIsLoginPageVisible(true);
@@ -15,14 +17,22 @@ function NewPasswordPage(){
     function handlePopUp(){
         setIsPopUpVisible(true);
     }
+
+    function handleBack(){
+        setBack(true);
+    }
     
     return (
         <div>{isLoginPageVisible ? (
             <div></div>
+        ):back ? (
+            <div>
+                <VerificationPage />
+            </div>
         ):(
             <div>
                 <div>
-                    <div className="absolute p-4 ml-2 cursor-pointer">
+                    <div className="absolute p-4 ml-2 cursor-pointer" onClick={handleBack}>
                         <img src={Back} alt="Back Button" className="size-5"/>
                     </div>
                     <div className="flex justify-center p-2">
