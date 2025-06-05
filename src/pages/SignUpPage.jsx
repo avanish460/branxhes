@@ -3,12 +3,22 @@ import Logo from '../assets/Logo.svg';
 import Button from "../components/Button";
 import LoginPage from "./LoginPage";
 import { FaUpload } from "react-icons/fa";
+import UploadPicPopUp from "../components/UploadPicPopUp";
 
 function SignUpPage(){
     const [isComponentVisible, setIsComponentVisible] = useState(false);
+    const [showPopUp, setShowPopUp] = useState(false);
 
     function handleComponent(){
         setIsComponentVisible(true);
+    }
+
+    function handlePopUp(){
+        setShowPopUp(true);
+    }
+
+    function handleClosePopUp(){
+        setShowPopUp(false);
     }
     return (
         <div>
@@ -33,7 +43,7 @@ function SignUpPage(){
                     </div>
                     <div className="flex flex-col cursor-pointer">
                         <div className="flex justify-center p-2">
-                            <div className="w-15 h-15 border-2 border-dashed border-[#5F8B7A] rounded-lg flex justify-center">
+                            <div className="w-15 h-15 border-2 border-dashed border-[#5F8B7A] rounded-lg flex justify-center" onClick={handlePopUp}>
                                 <FaUpload className="text-[#5F8B7A] size-5 mt-4"/>
                             </div>
                         </div>
@@ -93,6 +103,12 @@ function SignUpPage(){
                         <LoginPage />
                     </div>
                 )
+            }
+
+            {showPopUp && 
+                <div onClick={handleClosePopUp}>
+                    <UploadPicPopUp />
+                </div>
             }
         </div>
     )
