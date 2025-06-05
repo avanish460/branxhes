@@ -3,22 +3,34 @@ import Logo from '../assets/Logo.svg';
 import Button from "../components/Button";
 import Back from "../assets/backButton.svg";
 import NewPasswordPage from "./NewPasswordPage";
+import ForgotPasswordPage from "./ForgotPasswordPage";
 
 function VerificationPage(){
     const [passwordComponent, setPasswordComponent] = useState(false);
+    const [back, setBack] = useState(false);
+
     function handlePasswordComponent(){
         setPasswordComponent(true);
     }
+
+    function handleBack(){
+        setBack(true);
+    }
+
     return (
         <div>
             {passwordComponent ? (
                 <div>
                     <NewPasswordPage />
                 </div>
+            ):back ? (
+                <div>
+                    <ForgotPasswordPage />
+                </div>
             ):(
             <div>
                 <div>
-                    <div className="absolute p-4 ml-3 cursor-pointer">
+                    <div className="absolute p-4 ml-3 cursor-pointer" onClick={handleBack}>
                         <img src={Back} alt="Back Button" className="size-5"/>
                     </div>
                     <div className="flex justify-center p-2">
