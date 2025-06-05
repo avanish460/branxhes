@@ -60,7 +60,7 @@ function LoginPage(){
                         </div>
                         <div className="flex justify-center p-5">
                             <div className="flex flex-col">
-                                <Button title={"Sign In"} className={"px-33 py-2  rounded-full bg-green-900 cursor-pointer opacity-70"}/>
+                                <Button title={"Sign In"} className={"px-30 py-2  rounded-full bg-green-900 cursor-pointer opacity-70"}/>
                             </div>
                         </div>
                         <div className="flex justify-center">

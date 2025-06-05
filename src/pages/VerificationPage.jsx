@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Logo from '../assets/Logo.svg';
 import Button from "../components/Button";
 import Back from "../assets/backButton.svg";
+import NewPasswordPage from "./NewPasswordPage";
 
 function VerificationPage(){
+    const [passwordComponent, setPasswordComponent] = useState(false);
+    function handlePasswordComponent(){
+        setPasswordComponent(true);
+    }
     return (
         <div>
+            {passwordComponent ? (
+                <div>
+                    <NewPasswordPage />
+                </div>
+            ):(
             <div>
                 <div>
                     <div className="absolute p-4 ml-3 cursor-pointer">
@@ -45,12 +55,12 @@ function VerificationPage(){
                 </div>
                 
                 <div className="flex justify-center p-5 mt-42">
-                    <div className="flex flex-col">
+                    <div className="flex flex-col" onClick={handlePasswordComponent}>
                         <Button title={"Verify and Continue"} className={"px-20 py-2 rounded-full bg-green-900 cursor-pointer opacity-70"}/>
                     </div>
                 </div>
-                
             </div>
+            )}
         </div>
     )
 }
