@@ -4,13 +4,20 @@ import Button from "../components/Button";
 import LoginPage from "./LoginPage";
 import { FaUpload } from "react-icons/fa";
 import UploadPicPopUp from "../components/UploadPicPopUp";
+import VerificationPage from "./VerificationPage";
 
 function SignUpPage(){
     const [isComponentVisible, setIsComponentVisible] = useState(false);
     const [showPopUp, setShowPopUp] = useState(false);
+    const [showSignUp, setShowSignUp] = useState(false);
+    const FromSignUp = true;
 
     function handleComponent(){
         setIsComponentVisible(true);
+    }
+    
+    function handleSignUpComponent(){
+        setShowSignUp(true);
     }
 
     function handlePopUp(){
@@ -22,7 +29,15 @@ function SignUpPage(){
     }
     return (
         <div>
-            {!isComponentVisible ? (
+            {isComponentVisible ? (
+                <div>
+                    <LoginPage />
+                </div>
+            ): showSignUp ? (
+                <div>
+                    <VerificationPage address={FromSignUp}/>
+                </div>
+            ): (
                 <div>
                     <div className="flex justify-center p-2">
                         <div className="flex justify-center w-75 h-25 border-1 rounded-lg bg-gray-200 p-2">
@@ -86,7 +101,7 @@ function SignUpPage(){
                     </div>
                     
                     <div className="flex justify-center p-5">
-                        <div className="flex flex-col">
+                        <div className="flex flex-col" onClick={handleSignUpComponent}>
                             <Button title={"Sign Up"} className={"px-30 py-2  rounded-full bg-green-900 cursor-pointer opacity-70"}/>
                         </div>
                     </div>
@@ -98,12 +113,8 @@ function SignUpPage(){
                         </div>
                         
                     </div>
-                </div>):(
-                    <div>
-                        <LoginPage />
-                    </div>
-                )
-            }
+                </div>
+                )}
 
             {showPopUp && 
                 <div onClick={handleClosePopUp}>

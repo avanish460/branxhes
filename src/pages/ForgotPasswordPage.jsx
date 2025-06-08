@@ -9,6 +9,7 @@ import LoginPage from "./LoginPage";
 function ForgotPasswordPage(){
     const [isComponentVisible, setIsComponentVisible] = useState(false);
     const [back, setBack] = useState(false);
+    const FromLogin = false;
     
     function handleComponent(){
         setIsComponentVisible(true);
@@ -22,7 +23,7 @@ function ForgotPasswordPage(){
         <div>
             {isComponentVisible ? (
                 <div>
-                    <VerificationPage />
+                    <VerificationPage address={FromLogin}/>
                 </div>
             ):back ? (
                 <div>
