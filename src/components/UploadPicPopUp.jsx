@@ -54,7 +54,7 @@ function UploadPicPopUp(){
                             
                                 {profileImage ? (
                                     <div>
-                                        {console.log(profileImage)}
+                                        
                                     </div>
                                 ):(
                                 <div className="flex justify-center p-2" onClick={handleImageClick}>

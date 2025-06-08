@@ -4,8 +4,9 @@ import Button from "../components/Button";
 import Back from "../assets/backButton.svg";
 import NewPasswordPage from "./NewPasswordPage";
 import ForgotPasswordPage from "./ForgotPasswordPage";
+import LoginPage from "./LoginPage";
 
-function VerificationPage(){
+function VerificationPage({address}){
     const [passwordComponent, setPasswordComponent] = useState(false);
     const [back, setBack] = useState(false);
 
@@ -19,11 +20,15 @@ function VerificationPage(){
 
     return (
         <div>
-            {passwordComponent ? (
+            {passwordComponent && !address ? (
                 <div>
                     <NewPasswordPage />
                 </div>
-            ):back ? (
+            ):passwordComponent && address ? (
+                <div>
+                    <LoginPage />
+                </div>
+            ): back ? (
                 <div>
                     <ForgotPasswordPage />
                 </div>
