@@ -5,10 +5,12 @@ import { FaApple } from 'react-icons/fa';
 import Button from "../components/Button";
 import ForgotPasswordPage from "./ForgotPasswordPage";
 import SignUpPage from "./SignUpPage";
+import CompleteDetailsPage from "./CompleteDetailsPage";
 
 function LoginPage(){
     const [isComponentVisible, setIsComponentVisible] = useState(false);
     const [registerComponentVisible, setRegisterComponentVisible] = useState(false);
+    const [loginSuccessfully, setLoginSuccessfully] = useState(false);
 
     function handleComponent(){
         setIsComponentVisible(true);
@@ -16,6 +18,10 @@ function LoginPage(){
 
     function handleRegisterComponent(){
         setRegisterComponentVisible(true);
+    }
+
+    function handleLogin(){
+        setLoginSuccessfully(true);
     }
     return (
         <div>
@@ -27,6 +33,10 @@ function LoginPage(){
                 ):registerComponentVisible ? (
                     <div>
                         <SignUpPage />
+                    </div>
+                ):loginSuccessfully ? (
+                    <div>
+                        <CompleteDetailsPage />
                     </div>
                 ):(
                     <div>
@@ -59,7 +69,7 @@ function LoginPage(){
                             <button onClick={handleComponent} className="italic font-bold text-green-800 opacity-70 text-sm cursor-pointer">Forget Password?</button>
                         </div>
                         <div className="flex justify-center p-5">
-                            <div className="flex flex-col">
+                            <div className="flex flex-col" onClick={handleLogin}>
                                 <Button title={"Sign In"} className={"px-30 py-2  rounded-full bg-green-900 cursor-pointer opacity-70"}/>
                             </div>
                         </div>
