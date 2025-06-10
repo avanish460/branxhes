@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Back from "../assets/backButton.svg";
+import Button from "../components/Button";
 
 function CompleteDetailsPage(){
     const [back, setBack] = useState(false);
@@ -29,7 +30,7 @@ function CompleteDetailsPage(){
                         <label htmlFor="DOB" className="flex justify-start text-black text-sm font-semibold tracking-wide p-1">DOB</label>
                         <input type="text" className="bg-white rounded-lg shadow-xl text-black flex justify-start w-75 px-2 py-1"/>
                         <div className="flex flex-start pt-5 pb-3">
-                            <input type="radio" className="size-5"/>
+                            <input type="radio" className="size-5 cursor-pointer"/>
                             <label htmlFor="Deceased" className="font-semibold text-sm text-black pl-2"> Deseased </label>
                         </div>
                         
@@ -45,14 +46,20 @@ function CompleteDetailsPage(){
                         <label htmlFor="education" className="flex justify-start text-black text-sm font-semibold tracking-wide p-1">Education</label>
                         <div className="bg-white border rounded-xl shadow-xl p-5">
                             <label htmlFor="interestHobbies" className="flex justify-start text-black text-sm tracking-wide p-1">Type Interest / Hobbies...</label>
-                            <input type="text" className="bg-[#d8d8d8] rounded-lg shadow-xl text-black flex justify-start w-60 px-2 py-1"/>
-                            <div className="flex">
-                                <label htmlFor="from" className="flex justify-start text-black text-sm tracking-wide p-1">From</label>
-                                <input type="text" className="bg-[#d8d8d8] rounded-lg shadow-xl text-black flex justify-start w-30 px-2 py-1"/>
-                                <label htmlFor="to" className="flex justify-start text-black text-sm tracking-wide p-1">To</label>
-                                <input type="text" className="bg-[#d8d8d8] rounded-lg shadow-xl text-black flex justify-start w-30 px-2 py-1"/>
+                            <input type="text" className="bg-[#d8d8d8] rounded-lg shadow-xl text-black flex justify-start w-65 px-2 py-1"/>
+                            <div className="flex justify-between">
+                                <div>
+                                    <label htmlFor="from" className="flex justify-start text-black text-sm tracking-wide p-1">From</label>
+                                    <input type="text" className="bg-[#d8d8d8] rounded-lg shadow-xl text-black flex justify-start w-30 px-2 py-1"/>
+                                </div>
+                                <div>
+                                    <label htmlFor="to" className="flex justify-start text-black text-sm tracking-wide p-1">To</label>
+                                    <input type="text" className="bg-[#d8d8d8] rounded-lg shadow-xl text-black flex justify-start w-30 px-2 py-1"/>
+                                </div>
                             </div>
-
+                            <div className="mt-5">
+                                <Button title={"Add another"} className={"p-2 text-black text-sm px-5 rounded-full bg-[#D5E1DC] cursor-pointer"}/>
+                            </div>
                         </div>
                         
                     </div>
